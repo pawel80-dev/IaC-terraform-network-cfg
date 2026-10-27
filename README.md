@@ -2,7 +2,7 @@
 
 Based on [Network as Code IOS-XE](https://netascode.cisco.com/docs/start/iosxe/introduction/)  
 
-![alt text](drawings/jenkins_pipeline_v01.png)  
+![alt text](drawings/jenkins_pipeline_v02.png)  
 *NaC: generic design*
 
 Tools:
