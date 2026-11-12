@@ -11,6 +11,10 @@ jobs:
       - name: Remove existing gitlab remote
         run: git remote remove gitlab 2>/dev/null || true
 
+        # LAB environment with a self-signed certificate
+      - name: Disable Git SSL verification
+        run: git config --global http.sslVerify false
+
       - name: Sync to GitLab
         uses: kujov/gitlab-sync@main
         with:
