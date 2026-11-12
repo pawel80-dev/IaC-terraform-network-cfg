@@ -8,6 +8,9 @@ jobs:
   sync:
     runs-on: self-hosted
     steps:
+      - name: Remove existing gitlab remote
+        run: git remote remove gitlab 2>/dev/null || true
+
       - name: Sync to GitLab
         uses: kujov/gitlab-sync@main
         with:
