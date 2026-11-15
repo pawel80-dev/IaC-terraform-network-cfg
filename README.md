@@ -11,7 +11,7 @@ Grant Jenkins access to GitLab projects:
 GitLab <-> Jenkins, webhook integration
 [Configure GitLab project](https://docs.gitlab.com/integration/jenkins/)  
 
-Add Jenkins agent as Podman container: 
+Add Jenkins agent as Podman container:  
 • Navigate to Nodes. Go to Manage Jenkins > Nodes (or Manage Nodes and Clouds) and click New Node  
 • Name the agent. Enter a descriptive name (such as podman-agent-1), select Permanent Agent, and click Create  
 • Set the root directory. Enter /home/jenkins/agent in the Remote root directory field  

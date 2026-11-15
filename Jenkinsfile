@@ -2,14 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build & Test') {
             steps {
-                echo 'Building code from GitLab...'
+                echo 'Running on all branches...'
             }
         }
-        stage('Test') {
+        stage('Deploy to Production') {
+            when {
+                branch 'main'
+            }
             steps {
-                echo 'Running tests...'
+                echo 'Deploying only when pushed to main...'
             }
         }
     }
