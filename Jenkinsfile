@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent podman2
 
     stages {
         stage('Build & Test') {
