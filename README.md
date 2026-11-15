@@ -29,6 +29,9 @@ Execute below command on Podman server:
 > podman stop <container-name> # This command stops a running container  
 > podman rm <container-name>   # This command is used to delete a stopped container  
 
+> [!NOTE]
+> Gitlab: check Webhooks send to Jenkins  
+> Jenkins: check Triggers  
 
 Tools:
 - Github (single source of truth)
