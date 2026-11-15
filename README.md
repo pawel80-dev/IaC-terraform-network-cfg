@@ -13,9 +13,9 @@ GitLab <-> Jenkins, webhook integration
 
 Add Jenkins agent as Podman container:  
 • Navigate to Nodes. Go to **Manage Jenkins > Nodes** (or Manage Nodes and Clouds) and click **New Node**  
-• Name the agent. Enter a descriptive name (such as podman-agent-1), select Permanent Agent, and click Create  
+• Name the agent. Enter a descriptive name (such as agent2_podman), select **Permanent Agent**, and click **Create**  
 • Set the root directory. Enter /home/jenkins/agent in the Remote root directory field  
-• Add labels. Type a label like podman or linux so your Jenkinsfile pipelines can target this specific agent  
+• Add labels. Type a label like **podman2** or linux so your Jenkinsfile pipelines can target this specific agent  
 • Select the launch method. Choose Launch agent by connecting it to the controller. Checking Use WebSocket is recommended so the agent communicates over your standard HTTP/HTTPS port (8080) without requiring a separate TCP port (50000)  
 • Copy the secret. Click Save, **click on your newly created node in the list**, and copy the secret key shown in the example command   
 
