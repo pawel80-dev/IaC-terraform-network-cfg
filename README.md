@@ -11,13 +11,19 @@ Grant Jenkins access to GitLab projects:
 GitLab <-> Jenkins, webhook integration
 [Configure GitLab project](https://docs.gitlab.com/integration/jenkins/)  
 
-Add Jenkins agent as Podman container:    
-Click on the new agent name to note the secret  
+Add Jenkins agent as Podman container: 
+• Navigate to Nodes. Go to Manage Jenkins > Nodes (or Manage Nodes and Clouds) and click New Node  
+• Name the agent. Enter a descriptive name (such as podman-agent-1), select Permanent Agent, and click Create  
+• Set the root directory. Enter /home/jenkins/agent in the Remote root directory field  
+• Add labels. Type a label like podman or linux so your Jenkinsfile pipelines can target this specific agent  
+• Select the launch method. Choose Launch agent by connecting it to the controller. Checking Use WebSocket is recommended so the agent communicates over your standard HTTP/HTTPS port (8080) without requiring a separate TCP port (50000)  
+• Copy the secret. Click Save, **click on your newly created node in the list**, and copy the secret key shown in the example command   
+
 Execute below command on Podman server:  
 ```podman run -d --name agent2_podman --restart unless-stopped --init -v jenkins-agent-workdir:/home/jenkins/agent docker.io/jenkins/inbound-agent:latest -url http://jenkins.homelab.com:8080 -webSocket -secret a958e5d3aab0e68e4bfaf81915ed1d8dce20411c8e767c3b9585ec539ca00647 -name "agent2_podman"```  
 
 > [!NOTE]
-> Usefull commands:  
+> Usefull Podman commands:  
 > podman ps       # This command is used to list the running containers  
 > podman ps -a    # This command is used to show all the running and exited containers  
 > podman stop <container-name> # This command stops a running container  
