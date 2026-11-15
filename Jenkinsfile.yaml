@@ -1,6 +1,7 @@
 pipeline:
   agent:
     label: "podman2"
+
   stages:
     - stage: "Build & Test"
       steps:
