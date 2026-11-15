@@ -1,0 +1,12 @@
+pipeline:
+  agent:
+    label: "podman2"
+  stages:
+    - stage: "Build & Test"
+      steps:
+        - "echo 'Running on all branches...'"
+    - stage: "Deploy to Production"
+      when:
+        branch: "main"
+      steps:
+        - "echo 'Deploying only when pushed to main...'"
